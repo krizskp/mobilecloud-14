@@ -17,10 +17,18 @@
  */
 package org.magnum.dataup;
 
+import java.util.Collection;
+
+import org.magnum.dataup.model.Video;
+import org.magnum.dataup.model.VideoStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import retrofit.client.Response;
+import retrofit.mime.TypedFile;
 
 @Controller
-public class AnEmptyController {
+public class ServiceController {
 
 	/**
 	 * You will need to create one or more Spring controllers to fulfill the
@@ -38,5 +46,28 @@ public class AnEmptyController {
                                                                                                                                                                                                                                                                         
 	 * 
 	 */
+	
+	
+	@RequestMapping("/video")
+	public @ResponseBody Collection<Video> getVideoList() {
+		
+		return null;
+	}
+	
+	public Video addVideo(Video v) {
+		
+		return v;
+	}
+
+	public VideoStatus setVideoData(long id, TypedFile videoData) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Response getData(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	
 }
