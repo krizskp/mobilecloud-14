@@ -18,13 +18,17 @@
 
 package org.magnum.mobilecloud.video;
 
+import java.util.Collection;
+
+import org.magnum.mobilecloud.video.client.VideoSvcApi;
+import org.magnum.mobilecloud.video.repository.Video;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class AnEmptyController {
+public class VideoSvcController {
 	
 	/**
 	 * You will need to create one or more Spring controllers to fulfill the
@@ -46,6 +50,54 @@ public class AnEmptyController {
 	@RequestMapping(value="/go",method=RequestMethod.GET)
 	public @ResponseBody String goodLuck(){
 		return "Good Luck!";
+	}
+
+	
+	public Collection<Video> getVideoList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	public Video getVideoById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	public Video addVideo(Video v) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	public Void likeVideo(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	public Void unlikeVideo(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	public Collection<Video> findByTitle(String title) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	public Collection<Video> findByDurationLessThan(long duration) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	public Collection<String> getUsersWhoLikedVideo(long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
