@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.apache.catalina.connector.Connector;
 import org.apache.coyote.http11.Http11NioProtocol;
+import org.magnum.mobilecloud.video.repository.VideoRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -32,8 +33,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 // Any class in this package that is annotated with @Controller is going to be
 // automatically discovered and connected to the DispatcherServlet.
 @ComponentScan
-// TODO JPA Repository
-@EnableJpaRepositories()
+// JPA Video Repository
+@EnableJpaRepositories(basePackageClasses = VideoRepository.class)
 public class Application //extends RepositoryRestMvcConfiguration 
 {
 
