@@ -1,5 +1,11 @@
 package org.magnum.mobilecloud.video.repository;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,7 +40,11 @@ public class Video {
 	private long duration;
 	private long likes;
 	
+	@ElementCollection
+	private Collection<String> likedBy;
+	
 	public Video() {
+		likedBy = new ArrayList<String>();
 	}
 
 	public Video(String name, String url, long duration, long likes) {
@@ -43,6 +53,7 @@ public class Video {
 		this.url = url;
 		this.duration = duration;
 		this.likes = likes;
+		likedBy = new ArrayList<String>();
 	}
 
 	public String getName() {
@@ -83,6 +94,15 @@ public class Video {
 	
 	public void setLikes(long likes) {
 		this.likes = likes;
+	}
+	
+	public void setLikedBy(Collection<String> likers) {
+		this.likedBy = likers;
+		this.likes = likedBy.size();
+	}
+	
+	public Collection<String> getLikedBy() {
+		return likedBy;
 	}
 	
 	/**
